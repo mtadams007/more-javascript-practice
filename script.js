@@ -32,27 +32,34 @@ while (j > 0) {
 
 // #3
 
-let arr = [5,10,5,2,2,1,653,5,90,5,2,7,9,20,43,92,1,74];
+let array1 = [5,10,5,2,2,1,653,5,90,5,2,7,9,20,43,92,1,74];
 
-function count(ar){
-  ar.sort();
-  for (let i = 0; i < ar.length; i++){
+function count(arr){
+  //puts the array in order
+  arr.sort();
+  //i is the index we want to see whether it repeats
+  for (let i = 0; i < arr.length; i++){
+    //counter counts how many times a number shows up
     let counter = 1;
-    for (let k = i + 1; k < ar.length; k++){
-      let variable = ar[i];
-      if (ar[i] === ar[k]){
+    //k is what we're comparing i to
+    for (let k = i + 1; k < arr.length; k++){
+      //is there a match?
+      if (arr[i] === arr[k]){
+        //if yes, we add one to the counter
         counter++;
+        //we also are adding to the index of i so that we don't double count
         i++;
       }
     }
+    //checking grammar
     if (counter > 1){
-    console.log(ar[i] + ' exists ' + counter + ' times.');
+    console.log(arr[i] + ' exists ' + counter + ' times.');
     }else{
-      console.log(ar[i] + ' exists ' + counter + ' time.');
+      console.log(arr[i] + ' exists ' + counter + ' time.');
     }
   }
 }
-count(arr);
+// count(array1);
 
 // #4
 
@@ -64,4 +71,22 @@ function reverse(strng){
   }return newString;
 }
 
-reverse(str);
+// reverse(str);
+
+// #3 Hash solution (stolen from Alex)
+
+let numberAndTimes = {}
+
+for (i = 0; i < arr.length; i++) {
+  let num = arr[i]
+  if (numberAndTimes.hasOwnProperty(num)) {
+    numberAndTimes[num] = (numberAndTimes[num] + 1)
+  } else {
+    numberAndTimes[arr[i]] = 1;
+  }
+}
+
+console.log(numberAndTimes)
+
+
+Add CommentCollapse 

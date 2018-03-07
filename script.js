@@ -88,5 +88,34 @@ for (i = 0; i < arr.length; i++) {
 
 console.log(numberAndTimes)
 
+// #3 cool array solution (stolen from Olga)
 
-Add CommentCollapse 
+let arr = [5,10,5,2,2,1,653,5,90,5,2,7,9,20,43,92,1,74];
+let used = [];
+for (i=0; i<arr.length; i++) {
+    let m = arr[i]
+    if (used.indexOf(m)==-1) {
+        let count = 1
+        for (k=i + 1; k <arr.length; k++){
+
+            if (arr[i]==arr[k]) {
+                count++
+                k++
+            } else {}
+        }
+        used.push(m);
+        console.log(m.toString() + " exists " + count.toString());
+    }
+}
+
+// # 4 Better solution to 4
+
+let str = "youareadeveloper";
+function reverse(strng){
+  let newString = '';
+  for(let i = strng.length - 1; i >= 0; i--){
+    newString = newString + (strng[i]);
+  }return newString;
+}
+
+reverse(str);
